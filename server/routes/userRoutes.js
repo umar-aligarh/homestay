@@ -16,11 +16,14 @@ router.route('/login').get((req,res)=>{
     res.render('login');
 })
 
-router.route('/add').post(async (req, res) => {
+router.route('/checkUser').post(async (req, res) => {
     const phone = req.body.phone;
+    const data = phone 
    const p = await account.exists({_id:phone})
     if(p)
-    res.render('welcome')
+    {
+        res.render('existingUserLogin',{data})
+    }
     else 
     {
         const data = {
@@ -47,12 +50,24 @@ router.route('/newUser').post(async (req,res)=>{
     {
          const newUser = new account({_id:phone,password:password})
          await newUser.save()
-         res.render('welcome')
+         res.render('userHome')
     }
     else 
     {
           alert(" wrong otp ")
     }
 })
-
+router.route('/login').post(async (req,res)=>{
+     const password = req.body.password 
+     const phone = req.body.phone
+     const p =  await account.exists({_id:phone,password:password})
+     if(p)
+     {
+         res.render('userHome',{phone})
+     }
+     else 
+     {
+         alert(" wrong password ")
+     }
+})
 module.exports = router;
