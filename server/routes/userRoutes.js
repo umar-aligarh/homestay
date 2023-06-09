@@ -13,7 +13,8 @@ const alert = require('alert')
 // router.set('views', path.join(__dirname, '..', 'views'));
 
 router.route('/login').get((req,res)=>{
-    res.render('login');
+    const room_id = req.query.room_id
+    res.render('login',{room_id});
 })
 
 router.route('/checkUser').post(async (req, res) => {
