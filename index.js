@@ -94,7 +94,7 @@ app.use('/rooms', roomsRouter);
 app.use('/payments', transactionsRouter);
 app.use('/admin', adminRouter)
 
-let port = 5000||process.env.PORT
+let port = process.env.PORT||5000
 
 app.get("/",(req,res)=>{
      let user = {phone : "unknown",loggedIn:"false"}
