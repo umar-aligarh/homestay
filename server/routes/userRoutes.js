@@ -17,6 +17,7 @@ router.route('/login').get((req,res)=>{
     res.render('login',{room_id});
 })
 
+
 router.route('/checkUser').post(async (req, res) => {
     const phone = req.body.phone;
     const data = phone 
@@ -26,6 +27,7 @@ router.route('/checkUser').post(async (req, res) => {
         
         res.render('existingUserLogin',{data})
     }
+
     else 
     {
         const data = {
@@ -33,7 +35,7 @@ router.route('/checkUser').post(async (req, res) => {
             condition :true
                       
         }
-        res.render('signin',{data})
+        res.render('signup',{data})
     }    
   
     // newUser.save()
@@ -43,7 +45,7 @@ router.route('/checkUser').post(async (req, res) => {
 });
 const fast2sms = require('fast-two-sms')
 
-router.route('/newUser').post(async (req,res)=>{
+router.route('/add').post(async (req,res)=>{
     const phone = req.body.phone 
     console.log(phone)
     var options = {

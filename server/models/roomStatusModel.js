@@ -3,13 +3,18 @@ const mongoose = require("mongoose");
 const roomStatusSchema = new mongoose.Schema({
 
     _id: {  
-        type: String,  //room number
+        type: String,  //category number
         reqired: true
     },
+    categoryName:String, //Deluxe-Ground Floor
+
     bookings: {        
         type: [{bookingId: String, checkIn: Date, checkOut: Date}]
     },
-    capacity: Number  //(short form)
+    capacity: Number,  //(short form)
+    amount: Number
 })
 
-module.exports = mongoose.model("roomsStatus",roomStatusSchema);
+
+module.exports = mongoose.model("roomstatus",roomStatusSchema);
+

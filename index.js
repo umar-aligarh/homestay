@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require("cors")
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
+
 const dotenv = require("dotenv")
 dotenv.config()
 const usersRouter = require('./server/routes/userRoutes');
@@ -15,12 +16,19 @@ const session = require('express-session');
 const connectMongo = require('connect-mongo')
   
 
-
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User  = require('./server/models/userAccountsModel')
 const app = express();
 mongoose.connect(process.env.url)
+
+require('dotenv').config();
+
+const app = express();
+
+
+
+mongoose.connect('mongodb+srv://umarkhan:ZrTH34t9PujHNWZa@cluster0.y1jtalv.mongodb.net/homestay?retryWrites=true&w=majority')
 .then(
     ()=>{
         console.log('database connected');
@@ -30,15 +38,26 @@ mongoose.connect(process.env.url)
     }
 
 );
+mongoose.pluralize(null)
 
+app.use(bodyParser.urlencoded({limit: '5000mb', extended: true, parameterLimit: 100000000000}));
+app.use(bodyParser.json())
+app.use('/static', express.static('public'));
 app.set('view engine', 'ejs');
-app.set('views',__dirname + '/views');
+app.set('views', __dirname+'/views');
+
+const usersRouter = require('./server/routes/userRoutes');
+const bookingsRouter = require('./server/routes/bookingRoutes');
+const roomsRouter = require('./server/routes/roomRoutes');
+const transactionsRouter = require('./server/routes/transactionRoutes');
+
+
+
 
 app.use(cookieParser());
 app.use('/public', express.static('public'));
 app.use(cors())
 app.use(express.json())
-app.use(bodyParser.urlencoded({limit: '5000mb', extended: true, parameterLimit: 100000000000}));
 app.use(session({secret : 'not'}))
 // const store = new MongoDBStore({
 //     url: dbUrl,
@@ -71,6 +90,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+
 app.use('/users', usersRouter);
 app.use('/bookings', bookingsRouter);
 app.use('/rooms', roomsRouter);
@@ -101,4 +121,4 @@ app.get("/",(req,res)=>{
 })
 
 
-  app.listen(port, () => console.log("Server started on port 3000"));
+  app.listen(process.env.PORT, () => console.log("Server started"));
