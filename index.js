@@ -19,7 +19,6 @@ const connectMongo = require('connect-mongo')
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User  = require('./server/models/userAccountsModel')
-const app = express();
 mongoose.connect(process.env.url)
 
 require('dotenv').config();
@@ -46,10 +45,10 @@ app.use('/static', express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
 
-const usersRouter = require('./server/routes/userRoutes');
-const bookingsRouter = require('./server/routes/bookingRoutes');
-const roomsRouter = require('./server/routes/roomRoutes');
-const transactionsRouter = require('./server/routes/transactionRoutes');
+
+
+// const roomsRouter = require('./server/routes/roomRoutes');
+// const transactionsRouter = require('./server/routes/transactionRoutes');
 
 
 
@@ -121,4 +120,4 @@ app.get("/",(req,res)=>{
 })
 
 
-  app.listen(process.env.PORT, () => console.log("Server started"));
+  app.listen(5000, () => console.log("Server started"));

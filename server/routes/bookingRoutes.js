@@ -9,16 +9,15 @@ const metaModel = require('../models/metaModel');
 // app.set('views',__dirname + '/views');
 
 
-router.route('/newBooking').get((req,res)=>{
-    const phone = '1234'
-    return res.render("newBooking",{phone})
-})
 
-router.route('/newBookings').get((req,res)=>{
+
+router.route('/newBooking').get((req,res)=>{
     if(!req.session.user)
     res.redirect('/users/login') 
+    else {
     const phone =req.session.user.phone
-    res.render('newBookings',{phone})
+    res.render('newBooking',{phone})
+    }
 })
 
 router.route('/get').get(async (req,res)=>{
