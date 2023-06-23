@@ -1,0 +1,38 @@
+#out{
+    position: fixed;
+    right: 0%;
+}
+.display1{
+    display: hidden;
+}
+.card{
+/* width: min-content;
+display: block-inline; */
+border: 1px solid black;   
+position: relative;
+background-color: antiquewhite;
+margin-top: 6px;
+height: fit-content;
+}
+.prop{
+margin-top:0.5rem ; 
+
+
+}
+.right{
+position: absolute;
+right: 0%;
+}
+.Btn{
+padding: 2px 4px;
+border: none;
+}
+.danger{
+background-color: rgba(255, 0, 0, 0.281);
+}
+.Btn:hover {
+background-color: rgba(0, 128, 0, 0.562) ; 
+}
+.green{
+background-color: rgba(0, 128, 0, 0.345);
+}

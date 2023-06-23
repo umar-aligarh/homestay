@@ -2,3 +2,26 @@ inside /addbooking:
 
 
 
+
+https://webwhiteboard.com/board/ZTFDOT9Pxtjc6xVSpVCFkE3UF066pAG9/
+
+mohdhuzam002@gmail.com
+
+
+ZrTH34t9PujHNWZa
+
+
+ // basic html 
+ // REST APIs
+ // branching in git 
+admin portal 
+booking-info by acc. id 
+transactions info of respective bookings
+add a transaction for a booking 
+refund 
+how do we deploy ??? 
+ hostname 
+ fetch the transaction status from razor pay api 
+ cookies 
+ otp 
+

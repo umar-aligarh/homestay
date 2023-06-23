@@ -3,57 +3,12 @@
 <head>
   <title>Login Page</title>
   <link rel="stylesheet" type="text/css" href="./styles.css">
-  <style>
-    .container {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  </style>
+   <link rel="stylesheet" href="../public/assets/styles/login.css">
 </head>
 <body>
   <div class="container">
     <h1>Login</h1>
-    <form method="POST" action="/users/isExisting" enctype="application/json">
+    <form method="POST" action="/users/checkUser" enctype="application/json">
       <div class="form-group">
         <label for="phone">phone no.:</label>
         <input type="text" id="phone" name="phone" required>

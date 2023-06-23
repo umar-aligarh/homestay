@@ -6,15 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
           .GFG {
-            background-color: white;
-            border: 2px solid black;
-            color: green;
+            background-color: #4ca8af79;
+            border: 1px solid black;
+            color: white;
             padding: 5px 10px;
             text-align: center;
             display: inline-block;
             font-size: 20px;
             margin: 10px 30px;
             cursor: pointer;
+            text-decoration: none;
+        }
+        .GFG:hover {
+           background-color:#4548a0;
         }
   </style>
   <title>Document</title>
@@ -24,11 +28,10 @@
     My Bookings
   </header>
   <div class="contianer">
-    
-   <a href="/bookings/new" class="GFG">
-    add a booking 
+   <a href="/bookings/newBooking?phone=<%= user.phone %>" class="GFG">
+    add new booking
    </a>
-  
+ 
   </div>
 </body>
 </html>

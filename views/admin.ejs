@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/assets/styles/BandT.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <div class="searchBar">
+        <input type="text" id="phone">
+        <button onclick="findBookin()">search</button>
+    </div>
+    <div id="Bookings"></div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script >
+    
+ 
+        document.getElementById("phone").addEventListener("input",async (e) => {let phone =  document.getElementById("phone").value
+        let ele = document.getElementById("Bookings")
+        let Axios = axios.create()
+        phone = document.getElementById("phone").value 
+        let bookings =  await Axios.post("/bookings/getForAdmin",{phone:phone})  
+        bookings = bookings.data   
+        let length = bookings.length 
+           let tag  = ""
+           for(let i = 0 ;i< length ; i++)
+           {
+            
+            let _id = bookings[i]._id 
+            let roomsBooked = bookings[i].roomsBooked
+            let rB = ""
+            console.log("length of the rooms : "+roomsBooked.length)
+            let j ; 
+            for( j = 0 ;j<roomsBooked.length ; j ++)
+            {
+                rB  = rB+" " +  roomsBooked[j] 
+            }
+            console.log(roomsBooked)
+            console.log(bookings[i].accountId)
+            x = j*2000
+            const amount = (x).toString()
+            const bookingId = (bookings[i]._id).toString()
+            const ob= amount +bookingId
+            const obj = parseInt(ob)
+            tag = tag + `        <ul class="card card${i}" type="none">
+            <li class="prop">_id  : ${bookings[i]._id}</li>
+            <li class="prop">rooms:  ${rB}</li>
+            <li class="prop" id="Transactions${i}" >transactions : <button class="Btn " onclick="transaction(this)">648adac74762208c98887d44</button>
+                        
+            <button class="Btn " onclick="transaction()">transaction_id2</button>
+            <button onclick="addNewTransaction(${i})" class="Btn right">add</button>
+            </li>
+            <li id="trans${i}"></li>
+            <li class="prop amount">amount : ${j*2000} </li>
+            <li >
+            <span class="prop">checkIn : ${bookings[i].checkIn}</span>
+            <span  class="prop">checkOut : ${bookings[i].checkOut}</span>
+           </li>
+            <li class="prop">  <button onclick="delCard(${bookings[i]._id})" class="Btn danger">cancel</button> 
+            <button onclick="payNow(${obj})" class="right Btn green">pay now </button></li>
+        </ul>`
+           }
+           tag = '<button onclick="takeBack()">back</button>' + tag ; 
+          ele.innerHTML = tag      
+
+        }) 
+        function addNewTransaction(e)
+        {
+              
+            const defaultText  =    "default"   
+            const text = "Enter The Amount " 
+            var amount =  window.prompt(text,defaultText)
+            var Transactions = document.getElementById(`Transactions${e}`)
+            Transactions.innerHTML = Transactions.innerHTML +  `            <button class="Btn " onclick="transaction()">transaction_id3${amount}</button>` 
+        }
+  
+</script>
+</html>

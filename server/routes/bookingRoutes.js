@@ -3,9 +3,39 @@ const bookingsModel = require('../models/bookingsModel');
 const roomsModel = require('../models/roomStatusModel');
 const metaModel = require('../models/metaModel');
 
+
 // app.use(bodyParser.urlencoded({limit: '5000mMb', extended: true, parameterLimit: 100000000000}));
 // app.set('view engine', 'ejs');
 // app.set('views',__dirname + '/views');
+
+
+router.route('/newBooking').get((req,res)=>{
+    const phone = '1234'
+    return res.render("newBooking",{phone})
+})
+
+router.route('/newBookings').get((req,res)=>{
+    if(!req.session.user)
+    res.redirect('/users/login') 
+    const phone =req.session.user.phone
+    res.render('newBookings',{phone})
+})
+
+router.route('/get').get(async (req,res)=>{
+   const phone = req.session.user.phone
+   const allBookings = await bookingsModel.find({accountId:phone})
+   res.send(allBookings)
+})
+router.route('/getForAdmin').post(async (req,res)=>{
+    const allBookings = await bookingsModel.find({accountId:req.body.phone})
+    console.log(allBookings)
+   res.send(allBookings)
+ })
+
+router.route('/delete').post((req,res)=>{
+     console.log(req.body)
+     res.send(' success ')
+})
 
 async function getAndUpdateNumberofBookings()
 {
@@ -21,9 +51,6 @@ async function getAndUpdateNumberofBookings()
     return numberOfBookings;
 }
 
-router.route('/new').get((req,res)=>{
-    return res.render("newBooking")
-})
 
 router.route('/summary').get(async(req,res)=>{
     let doc = await bookingsModel.findById(req.query.id);
@@ -155,6 +182,7 @@ router.route('/totalamount').post(async(req, res) => {
     totalAmountObj.totalAmount=totalAmount;
     res.send(totalAmountObj);
 });
+
 
 module.exports = router;
 

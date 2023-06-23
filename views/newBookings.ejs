@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/assets/styles/login.css">
+    <title>Document</title>
+</head>
+<body>
+  
+
+    <!-- Get order id from razorpay -->
+   <!-- <form action="" >
+ <label for="checkIn">checkIn</label>
+ <input type="datetime-local" name="checkIn" id="checkIn">
+ <label for="checkOut">checkOut</label>
+ <input type="datetime-local" name="checkOut" id="checkOut"> -->
+ <button id="order-button1">4000</button> 
+</form>
+<!-- <script>
+       const checkOut = document.getElementById('checkOut')
+    checkInInput.addEventListener('input', function() {
+    // Retrieve the entered value from the input field
+    const checkOutDate = checkInInput.value;
+    
+    // Execute your function or perform any desired action
+
+  }); 
+    const checkIN = document.getElementById('checkIn')
+    checkInInput.addEventListener('input', function() {
+    // Retrieve the entered value from the input field
+    const checkInDate = checkInInput.value;
+    
+    // Execute your function or perform any desired action
+
+  });
+
+</script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
+    <script>
+       const Axios = axios.create();        
+        document.getElementById("order-button1").onclick = function(e) {
+            var url = "/payments/order";
+            var params = {
+                amount:2000000,
+                currency: "INR",
+                receipt: "wthcoding001",
+                payment_capture: '1'
+            };
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("POST", url, false);
+            xmlHttp.setRequestHeader("Content-type", "application/json");
+            xmlHttp.send(JSON.stringify(params));
+            res = JSON.parse(xmlHttp.responseText);
+            var order_id = res.sub.id 
+            console.log(order_id)
+         
+            var options = {
+            "key":"rzp_test_jNX1CcImVWrI6R" ,
+            "currency": "INR",
+            "name": "The Rose Home Stay",
+            "description": "The Rose Home Stay Transaction",
+            "order_id": order_id,
+            "handler": function(r) {
+                const postData = {
+                    p_id : r.razorpay_payment_id,
+                    o_id : r.razorpay_order_id,
+                    sign : r.razorpay_signature,
+                }
+                Axios.post('/payments/order/post',postData).then(
+                    r =>{
+                        console.log(r.data+"has been saved")
+                    }
+                )
+                .catch(e =>{console.log(e)})
+            }
+        };         
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+        e.preventDefault();
+        }
+    </script>
+</body>
+</html>
