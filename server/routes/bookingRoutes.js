@@ -9,8 +9,6 @@ const metaModel = require('../models/metaModel');
 // app.set('views',__dirname + '/views');
 
 
-
-
 router.route('/newBooking').get((req,res)=>{
     if(!req.session.user)
     res.redirect('/users/login') 
@@ -128,9 +126,7 @@ try {
         clash=0;
         let j = i.toString();
         let doc = await roomsModel.findById(j);
-        console.log("doc:",doc)
         let numberofActiveBookings = doc.bookings.length;
-        console.log(numberofActiveBookings);
         for(let j=0;j<numberofActiveBookings;j++)  //iterating through bookings of a room
         {
             if(!(checkOut<doc.bookings[j].checkIn||checkIn>doc.bookings[j].checkOut))

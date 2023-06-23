@@ -94,7 +94,7 @@ app.use('/rooms', roomsRouter);
 app.use('/payments', transactionsRouter);
 app.use('/admin', adminRouter)
 
-let port = "5000"
+let port = 5000||process.env.PORT
 
 app.get("/",(req,res)=>{
      let user = {phone : "unknown",loggedIn:"false"}
@@ -118,4 +118,4 @@ app.get("/",(req,res)=>{
 })
 
 
-  app.listen(5000, () => console.log("Server started"));
+  app.listen(port, () => console.log("Server started"));
