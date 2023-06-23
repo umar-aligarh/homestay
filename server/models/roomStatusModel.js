@@ -15,6 +15,6 @@ const roomStatusSchema = new mongoose.Schema({
     amount: Number
 })
 
-
+mongoose.pluralize(null)
 module.exports = mongoose.model("roomstatus",roomStatusSchema);
 

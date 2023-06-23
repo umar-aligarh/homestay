@@ -34,7 +34,6 @@ function checkBookingClash(myObject){
   }
   
   const objectSent={
-      // "selectedRooms": selectedRooms,
       "checkIn": checkIn,
       "checkOut": checkOut
   }
@@ -46,7 +45,7 @@ function checkBookingClash(myObject){
   headers: {
     "Content-type": "application/json; charset=UTF-8"
   }
-})
+  })
   .then((response) =>
   {
     if(response.status===400)
@@ -112,6 +111,9 @@ function calculateAmount(selectedCategory)
   });
   // console.log(selectedCategory)
 }
+
+
+
 function postBooking()
 {
   const checkIn = document.getElementById('checkIn')
@@ -135,6 +137,4 @@ function postBooking()
     })
   })
   
-
-
 }

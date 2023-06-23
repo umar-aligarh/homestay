@@ -17,5 +17,5 @@ const bookingSchema = new mongoose.Schema({
     checkOut: Date,
     isBookingCompelete: Boolean
 })
-
+mongoose.pluralize(null)
 module.exports = mongoose.model("booking",bookingSchema);

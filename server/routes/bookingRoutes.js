@@ -128,7 +128,9 @@ try {
         clash=0;
         let j = i.toString();
         let doc = await roomsModel.findById(j);
+        console.log("doc:",doc)
         let numberofActiveBookings = doc.bookings.length;
+        console.log(numberofActiveBookings);
         for(let j=0;j<numberofActiveBookings;j++)  //iterating through bookings of a room
         {
             if(!(checkOut<doc.bookings[j].checkIn||checkIn>doc.bookings[j].checkOut))
@@ -140,6 +142,7 @@ try {
         if(clash==0)
         {
             categoryName = doc.categoryName;
+            console.log(categoryName)
             if(availibilityInfo[categoryName] === undefined)
             {
                 availibilityInfo[categoryName] = {
