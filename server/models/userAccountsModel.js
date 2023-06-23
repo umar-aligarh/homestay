@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const passportLocalMongoose = require('passport-local-mongoose');
 const accountSchema = new mongoose.Schema({
 
     _id: {  
@@ -8,10 +8,9 @@ const accountSchema = new mongoose.Schema({
     },
     bookings:{        //bookings from this account(Booking-IDs)
         type: [String]
-    },
-    password: {
-         type: String
     }
+    
 })
+accountSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("accounts",accountSchema);

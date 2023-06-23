@@ -6,7 +6,10 @@
     scroll-behavior: smooth;
     transition: all 0.3s ease-out;
 }
-
+body{
+    background-color: rgba(245, 245, 220, 0.582);
+    background-color: rgba(127, 255, 212, 0.144);
+}
 .btn {
     display: flex;
     align-items: center;
@@ -14,16 +17,18 @@
 }
 
 button {
-    padding: 7px 75px;
-    background-color: #8d0003;
+    padding: 7px 15px;
+    background-color: #4ca8af79;
     color: whitesmoke;
-    margin-top: 22px;
+    margin-top: 0px;
     cursor: pointer;
+    /* border: 1px solid blue; */
+    border: none;
 }
 
 button:hover {
-    background-color: whitesmoke;
-    color: #8d0003;
+    background-color: #4548a0;
+    color: whitesmoke;
     font-weight: bold;
 }
 
@@ -58,15 +63,24 @@ button:hover {
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: center;
+    justify-content: space-evenly; 
+    background-color: rgba(12, 236, 248, 0.628);
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
     padding: 12px;
+    justify-content:space-between;
 }
-
+#MyBookings{
+    border: 1px blue solid; 
+    margin-top:14%;
+}
+#z-index{
+    z-index:100;
+     margin-top:10%;
+}
 .navbar #navbarmain li a {
     font-size: 17px;
     color: white;
@@ -124,19 +138,17 @@ a img:hover {
 
 /* Frontpage Content */
 
-.content {
-    display: flex;
-    flex-direction: column;
-    height: 715px;
-    font-size: 40px;
-    padding-left: 300px;
-    padding-right: 300px;
-    padding-bottom: 495px;
-    font-weight: bolder;
-    color: #943a3a;
-    align-items: center;
-    justify-content: center;
+
+/* height:100vh;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+align-items: baseline;
+justify-items: center; */
+.inline{ 
+    display: inline;
 }
+
 
 #contentsum1 {
     color: #943a3a;
@@ -147,7 +159,9 @@ a img:hover {
     font-weight: bolder;
 }
 
-
+.block{
+    display:block ; 
+}
 /* Kitchen */
 
 .kitchen #intro {
@@ -338,6 +352,7 @@ a img:hover {
     text-align: center;
     font-size: 55px;
     margin: 18px;
+    color: #3a8e94;
 }
 
 .contact #csum1,
@@ -371,6 +386,18 @@ form input {
     margin: 4px;
     padding: 4px;
 }
+/* .contt{
+     height:100vh;
+     display: flex;
+     justify-content: space-between;
+     flex-direction: row;
+     align-items: baseline;
+     justify-items: center;
+
+} */
+a{
+  z-index: 100;
+}
 
 .cdesc {
     flex-direction: column;
@@ -381,7 +408,9 @@ form input {
     padding-left: 200px;
     padding-right: 200px;
 }
-
+button{
+     z-index:100;
+}
 .contdata .btn {
     display: flex;
     justify-content: center;
@@ -402,4 +431,28 @@ footer {
     justify-content: center;
     height: 35px;
     padding-top: 7px;
+}
+
+.content { 
+    height: 100vh;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    width: 100%;
+}
+.buttonsFrontPage{
+    
+z-index: 100;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+border: 1px solid blue;
+gap: 1rem;
+}
+#displayAllBookings{
+    margin-top:1px;
+    width:100%;
+          
+  
+    z-index: 100
 }

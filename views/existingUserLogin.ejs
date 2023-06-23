@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/assets/styles/login.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="/users/login" method="post">
-        <label for="phone">phone</label>
-        <input type="text" name="phone" value=<%= data %>   readonly >
-        <label for="password">enter password</label>
-        <input type="password" id="password" name="password">
-        <button>submit</button>
-    </form>
+   
+        <div class="container">
+            <form action="/users/login" method="post">
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                <input type="text" name="phone" value=<%= data %>   readonly >
+                <label for="password" id="pass">Enter password</label>
+                <input type="password" id="password" name="password">
+                </div>
+                
+                <button type="submit">submit</button>
+            </form>
+        </div>
+       
 </body>
 </html>

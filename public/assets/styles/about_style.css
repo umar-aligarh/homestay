@@ -34,7 +34,7 @@ button:hover {
 
 .frontpage {
     position: relative;
-    background: url(../img/aboutpage.jpg) no-repeat;
+    /* background: url(../img/aboutpage.jpg) no-repeat; */
     background-size: cover;
     opacity: 0.91;
 }
