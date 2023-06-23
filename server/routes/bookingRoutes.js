@@ -116,34 +116,24 @@ router.route('/add').post(async(req, res) => {
 });
 
 router.route('/info').post(async(req, res) => {
-    // console.log(req.body)
-    // let selectedRooms = req.body.selectedRooms
+try {
     let checkIn = req.body.checkIn;
     let checkOut = req.body.checkOut;
     checkIn = Date.parse(checkIn);
     checkOut = Date.parse(checkOut);
     let clash=0;
     let availibilityInfo = {};
-    for(let i=1;i<=3;i++)//for each room
+    for(let i=1;i<=3;i++)  //for each room
     {
         clash=0;
         let j = i.toString();
         let doc = await roomsModel.findById(j);
         let numberofActiveBookings = doc.bookings.length;
-        for(let j=0;j<numberofActiveBookings;j++)//iterating through bookings of a room
+        for(let j=0;j<numberofActiveBookings;j++)  //iterating through bookings of a room
         {
-            // console.log(doc.bookings[j])
             if(!(checkOut<doc.bookings[j].checkIn||checkIn>doc.bookings[j].checkOut))
             {
-                // console.log(doc);
-                // let bookingsCheckout = doc.bookings[j].checkOut;
-                // if(checkIn>doc.bookings[j].checkOut)
-                // console.log('checkIn>doc.bookings[j].checkOut')
-                // else
-                // console.log('checkIn<=doc.bookings[j].checkOut')
-                // console.log(typeof checkIn,bookingsCheckout)
                 clash=1;
-                // console.log(doc.bookings[j]);
                 break;
             }
         }
@@ -164,8 +154,12 @@ router.route('/info').post(async(req, res) => {
             }
         }
     }
-    console.log(availibilityInfo)
     res.send(availibilityInfo);
+    
+} catch (error) {
+    return res.status(400).send(new Error(error));
+}
+    
 });
 
 router.route('/totalamount').post(async(req, res) => {

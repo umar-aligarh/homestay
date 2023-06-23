@@ -19,15 +19,13 @@ const connectMongo = require('connect-mongo')
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User  = require('./server/models/userAccountsModel')
-mongoose.connect(process.env.url)
 
 require('dotenv').config();
 
 const app = express();
 
 
-
-mongoose.connect('mongodb+srv://umarkhan:ZrTH34t9PujHNWZa@cluster0.y1jtalv.mongodb.net/homestay?retryWrites=true&w=majority')
+mongoose.connect(process.env.url)
 .then(
     ()=>{
         console.log('database connected');

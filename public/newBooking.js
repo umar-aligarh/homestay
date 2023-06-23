@@ -7,7 +7,6 @@ let selectedCategoriesGlobal = {};
 //}
 
 function checkBookingClash(myObject){
-  console.log('checkbookingclash')
   selectedCategoriesGlobal={};
   document.getElementById('amount').innerHTML="";
 
@@ -41,7 +40,7 @@ function checkBookingClash(myObject){
   }
 
 
-  fetch("http://localhost:3000/bookings/info", {
+  fetch(window.location.origin+"/bookings/info", {
   method: "POST",
   body: JSON.stringify(objectSent),
   headers: {
@@ -50,8 +49,14 @@ function checkBookingClash(myObject){
 })
   .then((response) =>
   {
-    response.json()
-    .then((availibilityInfo)=>{
+    if(response.status===400)
+    {
+      document.getElementById('availibility-info').innerHTML = `Cannot load booking data from the server`;
+    }
+    else
+    {
+      response.json()
+      .then((availibilityInfo)=>{
       console.log(availibilityInfo);
       let htmltoInsert="";
       for(const categoryName in availibilityInfo)
@@ -68,8 +73,12 @@ function checkBookingClash(myObject){
         htmltoInsert+=`</select><br>`;
       }
       document.getElementById('availibility-info').innerHTML = htmltoInsert;
-    });
-  });
+      });
+    }
+  })
+  .catch(error=>{
+    document.getElementById('availibility-info').innerHTML = `Cannot load booking data from the server`;
+  })
 }
 
 function calculateAmount(selectedCategory)
@@ -78,7 +87,7 @@ function calculateAmount(selectedCategory)
   let categoryQty = selectedCategory.options.selectedIndex;
   selectedCategoriesGlobal[categoryName].qty = categoryQty;
   console.log(selectedCategoriesGlobal)
-  fetch("http://localhost:3000/bookings/totalamount", {
+  fetch(window.location.origin+"/bookings/totalamount", {
   method: "POST",
   body: JSON.stringify(selectedCategoriesGlobal),
   headers: {
@@ -112,7 +121,7 @@ function postBooking()
     "checkOut": checkOut.valueAsDate,
     "categories":selectedCategoriesGlobal
   }
-  fetch("http://localhost:3000/bookings/add", {
+  fetch(window.location.origin+"/bookings/add", {
   method: "POST",
   body: JSON.stringify(objectSent),
   headers: {
