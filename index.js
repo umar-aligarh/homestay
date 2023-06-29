@@ -97,24 +97,17 @@ app.use('/admin', adminRouter)
 let port = process.env.PORT||5000
 
 app.get("/",(req,res)=>{
-     let user = {phone : "unknown",loggedIn:"false"}
- 
-     if(!req.session.user)
-     {
-             user = user 
-     }
-     else 
-     {
-         user =  req.session.user
-         
-     }
-    //  if(req.cookies&&req.cookies.userData.loggedIn === "true")
-    //  {
-    //     user = req.cookies.userData
-    //     console.log(req.cookies) 
-    //     console.log(req.cookies.userData.loggedIn)
-    // }
-     return res.render("home",{user})
+    let user = {phone : "unknown",loggedIn:"false"}
+
+    if(!req.session.user)//
+    {
+        user = user 
+    }
+    else 
+    {
+        user =  req.session.user 
+    }
+    return res.render("home",{user})
 })
 
 

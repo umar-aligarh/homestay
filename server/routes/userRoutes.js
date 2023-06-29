@@ -1,16 +1,9 @@
 const router = require('express').Router();
 const passport = require('passport');
-
 const account = require('../models/userAccountsModel')
 const path = require('path')
 const alert = require('alert')
 
-
-
-
-
-// router.set('view engine', 'ejs');
-// router.set('views', path.join(__dirname, '..', 'views'));
 
 router.route('/login').get((req,res)=>{
     const room_id = req.query.room_id
@@ -27,13 +20,11 @@ router.route('/checkUser').post(async (req, res) => {
         
         res.render('existingUserLogin',{data})
     }
-
     else 
     {
         const data = {
             phone : phone,
-            condition :true
-                      
+            condition :true  
         }
         res.render('signup',{data})
     }    
@@ -57,15 +48,15 @@ router.route('/add').post(async (req,res)=>{
     
     if( enteredOtp === sentOtp)
     {
-         const newUser = new account({_id:phone,password:password})
-         await newUser.save()
-         const user = {phone : phone , loggedIn: "true"}
-         req.session.user = user
-         res.redirect('/')
+        const newUser = new account({_id:phone,password:password})
+        await newUser.save()
+        const user = { phone : phone , loggedIn: "true"}
+        req.session.user = user
+        res.redirect('/')
     }
     else 
     {
-          alert(" wrong otp ")
+        alert(" wrong otp ")
     }
 })
 router.route('/login').post(async (req,res)=>{
