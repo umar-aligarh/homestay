@@ -1,0 +1,20 @@
+.display{
+    height: 80vh;
+    background-image: url("../img/hotel.jpg");
+    display:flex ; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-color: rgba(219, 157, 148, 0.511);
+    justify-content: center;
+    align-items: center ; 
+}
+.rooms{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 2rem;
+     background-color:rgba(205, 122, 122, 0.683)
+}
