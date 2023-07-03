@@ -54,12 +54,15 @@
     .submit-btn:hover {
       background-color: #0056b3;
     }
+    #confirm{
+       z-index:100%;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1><%=data.phone %></h1>
-    <form action="/users/add" method="post">
+
         <div class="form-group">
             <label for="phone">phone</label>
 
@@ -75,9 +78,25 @@
       <div class="form-group">
         <label for="otp">OTP Confirmation</label>
         <input type="text" id="otp" name="otp" required>
+        
       </div>
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
+
+      <button type="submit" class="submit-btn" onclick="checkOtp()">verify Otp</button>
+
   </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    let Axios = axios.create();
+    async function   checkOtp()  {
+      let enteredOtp = document.querySelector('#otp').value 
+      let phone = document.querySelector('#phone').value ;
+      let res = await Axios.post('/users/verifyOtp',{enteredOtp : enteredOtp,phone : phone })
+      if(res.data.valid === true && res.data.status === "approved")
+      {
+          Axios.post('/users/add',{phone : phone , password : document.querySelector("#password")})
+          window.location.replace('/');
+      }
+    }
+  </script>
 </body>
 </html>
