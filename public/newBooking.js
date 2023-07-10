@@ -138,3 +138,8 @@ function postBooking()
   })
   
 }
+
+function preImage(object)
+{
+  console.log(object)
+}

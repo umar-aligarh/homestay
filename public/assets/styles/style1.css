@@ -18,7 +18,100 @@
      gap: 2rem;
      background-color:rgba(255, 255, 255, 0.683)
 }
+.room-category{
+    display: flex;
+    border: 1px solid ; 
+    border-color: #dadada;
+    position: relative;
 
+    /* padding: 10px; */
+    /* background-color:rgba(172, 29, 29, 0.683) */
+}
+.room-category .imgdiv{
+    position: relative;
+    width: 50%;
+    max-width: 400px;
+    min-height: 185px;
+    /* background-color:rgba(46, 29, 172, 0.683) */
+}
+
+.room-category .imgdiv img{
+    height: 100%;
+    width: 100%;
+    /* background-color:rgba(46, 29, 172, 0.683) */
+}
+.room-category .txtdiv{
+    padding: 10px;
+    /* background-color:rgba(46, 29, 172, 0.683) */
+}
+.txtdiv{
+    /* position: relative; */
+}
+.txtdiv h4{
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+.txtdiv h2{
+    font-size: 15px;
+    font-weight: bold;
+}
+.txtdiv .rupee{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.txtdiv .price{
+    position: absolute;
+    /* left: 100%; */
+    right: 0%;
+    bottom: 0%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.txtdiv .night{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+    font-size: 12px;
+    color: rgb(66, 66, 66)
+    
+}
+#booking{
+    padding: 10px;
+}
+
+.price-toggle{
+    position: absolute;
+    bottom: 0%;
+    margin-bottom: 10px;
+    
+
+}
+ .checkin-out{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+#booking{
+    position: relative;
+} 
+.pre{
+    position: absolute;
+    top:40%;
+
+}
+/* .pre{
+    position: absolute;
+
+    right: 0%;
+
+} */
+.next{
+    position: absolute;
+    top:40%;
+    right: 0%;
+}
 /*==================== 
   Footer 
 ====================== */

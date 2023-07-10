@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Title Page</title>
+  <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../public/assets/styles/main.css">
+</head>
+<body>
+
+<!-- <div class="form-group">
+  <label for="checkIn">CheckIn</label>
+  <input type="date" id="checkIn" name="checkIn" onchange="checkBookingClash(this)">
+</div>
+<div class="form-group">
+  <label for="checkOut">CheckOut</label>
+  <input type="date" id="checkOut" name="checkOut" onchange="checkBookingClash(this)">
+</div>
+<div id="availibility-info"></div>
+<br>
+<br>
+<div id="amount"></div> 
+<br>
+<button class="submit-btn" onclick="postBooking()">Submit</button> -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="booking-form">
+      <h1>Book Your Room</h1>
+      
+      <fieldset>
+        
+        <legend><span class="number">1</span> Your Basic Info</legend>
+      
+        <label for="checkIn">CheckIn</label>
+        <input type="date" id="checkIn" name="checkIn" onchange="checkBookingClash(this)">
+      
+        <label for="checkOut">CheckOut</label>
+        <input type="date" id="checkOut" name="checkOut" onchange="checkBookingClash(this)">
+        <div class="available-rooms"><div  class="content"><img src="../public/assets/img/rooms/room1.jpeg"></div></div>
+
+        <div id="availibility-info"></div>
+        <div id="amount"></div> 
+
+
+        
+      </fieldset>
+     
+      <button type="submit" onclick="postBooking()">Book Now</button>
+
+     </div>
+      </div>
+    </div>
+
+ 
+  <script src="/static/newBooking.js"></script>
+
+</body>
+
+</html>
