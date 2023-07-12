@@ -1,233 +1,291 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Rose Home Stay</title>
-    <link rel="icon" type="image/x-icon" href="../hotel/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/assets/styles/style1.css">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>The Rose Home Stay</title>
+      <link rel="icon" type="image/x-icon" href="../hotel/favicon.ico">
+      <link
+         href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="../public/assets/styles/style1.css">
 
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
-              <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
+      <link rel='stylesheet'
+         href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+      <link rel='stylesheet'
+         href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+      <link
+         href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
+         rel='stylesheet' />
 
-</head>
+   </head>
 
+   <body>
 
-<body>
-
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>The Rose</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-         <link rel="stylesheet" href="style.css">  
-         <link rel="icon" type="image/x-icon" href="./img/hilsFavicon.png">
-        </head>
-      <body>
-        <header>
-            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">THE ROSE</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#rooms">Our Rooms</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#contact">contact us</a>
-                      </li>
-                    </ul>
+      <!doctype html>
+      <html lang="en">
+         <head>
+            <meta charset="utf-8">
+            <meta name="viewport"
+               content="width=device-width, initial-scale=1">
+            <title>The Rose</title>
+            <link
+               href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+               rel="stylesheet"
+               integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+               crossorigin="anonymous">
+            <link rel="stylesheet" href="style.css">
+            <link rel="icon" type="image/x-icon"
+               href="./img/hilsFavicon.png">
+         </head>
+         <body>
+            <header>
+               <nav
+                  class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark"
+                  data-bs-theme="dark">
+                  <div class="container-fluid">
+                     <a class="navbar-brand" href="#">THE ROSE</a>
+                     <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                           <li class="nav-item">
+                              <a class="nav-link active"
+                                 aria-current="page" href="/">Home</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link active" href="#rooms">Our
+                                 Rooms</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">Pricing</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link active"
+                                 href="#contact">contact us</a>
+                           </li>
+                        </ul>
+                     </div>
                   </div>
-                </div>
-              </nav>
-        </header>
-      <div id="booking">
-        <div class="checkin-out"><div class="row g-2">
-          <div class="col-md">
-            <div class="form-floating">
-              <input class="form-control" type="date" id="checkIn" name="checkIn" onchange="checkBookingClash(this)">
-              <label for="floatingSelectGrid">CheckIn</label>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="form-floating">
-              
-              <input class="form-control" type="date" id="checkOut" name="checkOut" onchange="checkBookingClash(this)">
-              <label for="floatingSelectGrid">CheckOut</label>
-            </div>
-          </div>
-        </div>
-        <div id="availibility-info"></div>
-        <div id="amount"></div> </div>
-        
-        <!-- <label for="checkIn">CheckIn</label>
+               </nav>
+            </header>
+            <div id="booking">
+               <div class="checkin-out"><div class="row g-2">
+                     <div class="col-md">
+                        <div class="form-floating">
+                           <input class="form-control" type="date"
+                              id="checkIn"
+                              name="checkIn"
+                              onchange="checkBookingClash(this)">
+                           <label for="floatingSelectGrid">CheckIn</label>
+                        </div>
+                     </div>
+                     <div class="col-md">
+                        <div class="form-floating">
+
+                           <input class="form-control" type="date"
+                              id="checkOut"
+                              name="checkOut"
+                              onchange="checkBookingClash(this)">
+                           <label for="floatingSelectGrid">CheckOut</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="availibility-info"></div>
+                  <div id="amount"></div> </div>
+
+               <!-- <label for="checkIn">CheckIn</label>
         <input type="date" id="checkIn" name="checkIn" onchange="checkBookingClash(this)">
       
         <label for="checkOut">CheckOut</label>
         <input type="date" id="checkOut" name="checkOut" onchange="checkBookingClash(this)"> -->
-      <br>
-      <div class="room-category">
-        <div class="imgdiv"><img id="i1" src="../public/assets/img/rooms/room1.jpeg" alt="">
+               <br>
+               <div class="room-category">
+                  <div class="imgdiv"><img id="i1"
+                        src="../public/assets/img/rooms/room1.jpeg" alt>
 
-          <div class="pre">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary" onclick="preImage(this)"><</button>
+                     <div class="pre">
+                        <div class="btn-group" role="group"
+                           aria-label="Basic example">
+                           <button type="button"
+                              class="btn btn-primary btn-pre-next"
+                              onclick="preImage(this)"><</button>
+                        </div>
+                     </div>
+
+                     <div class="next">
+                        <div class="btn-group" role="group"
+                           aria-label="Basic example">
+                           <button type="button"
+                              class="btn btn-primary btn-pre-next"
+                              onclick="nextImage(this)">></button>
+                        </div>
+                     </div>
+
+                  </div>
+
+                  <div class="txtdiv">
+                     <h2>Deluxe-Ground Floor</h2>
+                     <h4>-Double Bed</h4>
+                     <h4>-WiFi</h4>
+                     <div class="price"><h4 class="rupee">₹1300</h4><h4class="night">PerNight</h4>
+                     </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="booking-buttons">
+                     <div class="d-grid  col-6 booking-button">
+                        <button class="btn btn-primary book-now"
+                           type="button">Book Now</button>
+                     </div>
+                  </div>
+
+                  
+
+               </div>
+               //room-category
+
+               <br>
+
+               <div class="room-category">
+
+                  <div class="imgdiv"><img
+                        src="../public/assets/img/rooms/room4.jpeg"
+                        alt></div>
+                  <div class="txtdiv">
+                     <h2>Deluxe-Ground Floor</h2>
+                     <h4>Double Bed</h4>
+                     <h4>WiFi</h4>
+                     <div class="price"><h4 class="rupee">₹1300</h4><h4class="night">PerNight</h4>
+                     </div>
+                  </div>
+                  <hr>
+                  <div class="booking-buttons">
+                     <div class="d-grid  col-6 booking-button">
+                        <button class="btn btn-primary booked"
+                           type="button">Booked</button>
+                     </div>
+                  </div>
+                  <div class="booking-text">
+                     <h4 class="no-of-rooms">2 Room(s)*₹1300<br></h4>
+                  </div>
+               </div>
+               <br>
+               <div class="room-category">
+
+                  <div class="imgdiv"><img
+                        src="../public/assets/img/rooms/room3.jpeg"
+                        alt></div>
+                  <div class="txtdiv">
+                     <h2>Deluxe-Ground Floor</h2>
+                     <h4>Double Bed</h4>
+                     <h4>WiFi</h4>
+                     <h4>₹1300</h4>
+                     
+                  </div>
+               </div>
             </div>
-          </div>
+         </div>
+         <br>
 
-          <div class="next">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary" onclick="nextImage(this)">></button>
-            </div>
-          </div>
+         <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+         <footer id="footer" class="footer-1">
+            <div class="main-footer widgets-dark typo-light">
+               <div class="container">
+                  <div class="row">
 
-        </div>
+                     <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget subscribe no-box">
+                           <h5 class="widget-title">COMPANY NAME<span></span></h5>
+                           <p>About the company, little description
+                              will goes here.. </p>
+                        </div>
+                     </div>
 
-      <div class="txtdiv">
-        <h2>Deluxe-Ground Floor</h2>
+                     <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                           <h5 class="widget-title">Quick Links<span></span></h5>
+                           <ul class="thumbnail-widget">
+                              <li>
+                                 <div class="thumb-content"><a
+                                       href="#.">&nbsp;Get Started</a></div>
+                              </li>
+                              <li>
+                                 <div class="thumb-content"><a
+                                       href="#.">&nbsp;Top Leaders</a></div>
+                              </li>
+                              <li>
+                              </ul>
+                           </div>
+                        </div>
 
-        <h4>-Double Bed</h4>
-        <h4>-WiFi</h4>
-        <div class="price"><h4 class="rupee">₹1300</h4><h4 class="night">Per Night</h4></div>
-      <div class="price-toggle">
-        <h4>Select Number of Rooms</h4>
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">-</button>
-          <button type="button" class="btn btn-primary" style="background-color: rgb(255, 255, 255);">0</button>
-          <button type="button" class="btn btn-primary">+</button>
-        </div>
-      </div>
-        
-      </div>
-      
-      </div>
-      <br>
-      <div class="room-category">
-          
-        <div class="imgdiv"><img src="../public/assets/img/rooms/room4.jpeg" alt=""></div>
-        <div class="txtdiv">
-          <h2>Deluxe-Ground Floor</h2>
-          <h4>Double Bed</h4>
-          <h4>WiFi</h4>
-        </div>
-        
-        </div>
-        <br>
-        <div class="room-category">
-          
-          <div class="imgdiv"><img src="../public/assets/img/rooms/room3.jpeg" alt=""></div>
-          <div class="txtdiv">
-            <h2>Deluxe-Ground Floor</h2>
-    
-            <h4>Double Bed</h4>
-            <h4>WiFi</h4>
-            <h4>₹1300</h4>
-          </div>
-          
-          </div>
-      </div>
-    </div>
-      <br>
-      
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                           <div class="widget no-box">
+                              <h5 class="widget-title">Follow up<span></span></h5>
+                              <a href="#"> <i class="fa fa-facebook">
+                                 </i> </a>
+                              <a href="#"> <i class="fa fa-twitter">
+                                 </i> </a>
+                              <a href="#"> <i class="fa fa-youtube">
+                                 </i> </a>
+                           </div>
+                        </div>
+                        <br>
+                        <br>
 
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                           <div class="widget no-box">
+                              <h5 class="widget-title">Contact Us<span></span></h5>
+                              <p>Lorem ipsum dolor sit, amet
+                                 consectetur adipisicing elit.</p>
+                              <div class="emailfield">
+                                 <input type="text" name="email"
+                                    value="Email">
+                                 <input name="uri" type="hidden"
+                                    value="arabiantheme">
+                                 <input name="loc" type="hidden"
+                                    value="en_US">
+                                 <input
+                                    class="submitbutton ripplelink"
+                                    type="submit"
+                                    value="Subscribe">
+                              </form>
+                           </div>
+                        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-        <footer id="footer" class="footer-1">
-        <div class="main-footer widgets-dark typo-light">
-        <div class="container">
-        <div class="row">
-        
-          <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="widget subscribe no-box">
-        <h5 class="widget-title">COMPANY NAME<span></span></h5>
-        <p>About the company, little description will goes here.. </p>
-        </div>
-        </div>
-        
-          
-        <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="widget no-box">
-        <h5 class="widget-title">Quick Links<span></span></h5>
-        <ul class="thumbnail-widget">
-        <li>
-        <div class="thumb-content"><a href="#.">&nbsp;Get Started</a></div> 
-        </li>
-        <li>
-        <div class="thumb-content"><a href="#.">&nbsp;Top Leaders</a></div> 
-        </li>
-        <li>
-        </ul>
-        </div>
-        </div>
-        
-          
-        
-              <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="widget no-box">
-        <h5 class="widget-title">Follow up<span></span></h5>
-                    <a href="#"> <i class="fa fa-facebook"> </i> </a>
-                    <a href="#"> <i class="fa fa-twitter"> </i> </a>
-                    <a href="#"> <i class="fa fa-youtube"> </i> </a>
-        </div>
-        </div>
-        <br>
-          <br>
-        
-        
-        <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="widget no-box">
-        <h5 class="widget-title">Contact Us<span></span></h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          <div class="emailfield">
-        <input type="text" name="email" value="Email">
-        <input name="uri" type="hidden" value="arabiantheme">
-        <input name="loc" type="hidden" value="en_US">
-        <input class="submitbutton ripplelink" type="submit" value="Subscribe">
-        </form>  
-        </div>
-        </div>
-        
-        </div>
-        </div>
-        </div>
-          
-        <div class="footer-copyright">
-        <div class="container">
-        <div class="row">
-        <div class="col-md-12 text-center">
-        <p>Copyright Design Sherif Hamdy © 2019. All rights reserved.</p>
-        </div>
-        </div>
-        </div>
-        </div>
-        </footer>
-      </body>
-    </html>
-    
-    
-    
-    
+                     </div>
+                  </div>
+               </div>
 
-    <script src="/static/newBooking.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script >
+               <div class="footer-copyright">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-md-12 text-center">
+                           <p>Copyright Design Sherif Hamdy © 2019. All
+                              rights reserved.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </footer>
+         </body>
+      </html>
+
+      <script src="/static/newBooking.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+      <script>
         const hamburger = document.querySelector(".hamburger");
 
 const navbar = document.querySelector(".navbar");
@@ -261,10 +319,10 @@ $(document).ready(function () {
     });
 });
     </script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>    
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="/public/assets/scripts/fetchDetails.js"></script>
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="/public/assets/scripts/fetchDetails.js"></script>
 
-</body>
+   </body>
 
 </html>
