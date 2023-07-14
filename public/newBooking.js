@@ -143,3 +143,17 @@ function preImage(object)
 {
   console.log(object)
 }
+function nextImage(object)
+{
+  console.log(object);
+  const images = document.getElementById('images');
+  const roomCategory = document.getElementsByClassName('room-category')[0];
+  const imgdiv = roomCategory.getElementsByClassName('imgdiv');
+  const img = roomCategory.getElementsByTagName('img')['0'];
+  const outerHtml = img.outerHTML;
+  let index = outerHtml.search(/room[0-9]{1}/);
+  index+=4;
+  outerHtml[index] = (parseInt(outerHtml[index])+1).toString;
+  img.outerHTML = outerHtml;
+  console.log(typeof outerHtml)
+}

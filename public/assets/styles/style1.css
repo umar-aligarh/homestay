@@ -10,6 +10,9 @@
     justify-content: center;
     align-items: center ; 
 }
+#images{
+    display: none;
+}
 .rooms{
      display: flex;
      flex-direction: row;
