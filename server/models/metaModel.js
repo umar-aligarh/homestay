@@ -8,6 +8,10 @@ const metaSchema = new mongoose.Schema({
     numberofBookings: {
         type: Number,
         required: true
+    },
+    numberOfTransactions : {
+         type: Number , 
+        
     }
 })
 

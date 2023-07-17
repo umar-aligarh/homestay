@@ -97,23 +97,26 @@
             const transactions = bookings[i].transactions
             const TObj = (await Axios.post('/payments/getEachById',{transactions: transactions}))
             let transHtml = ""
-            let TransactionsObjects = Array(TObj.data.transObjects)
-            console.log(TransactionsObjects[0][1][0])
+            console.log(TObj)
+            let TransactionsObjects = (TObj.data).transObject
+            console.log(TransactionsObjects[0][1]) 
+
+        
             for(let j =0 ; j<TransactionsObjects[0].length ; j++)
             {
                transHtml = transHtml +   `<div class="d-flex col-sm-6 col-xl-3 text-center justify-content-center py-2"  >
                         <div class="cont">
                             <div class="row" style="background-color: aliceblue;">
                                 <div class="col-6  px-2 py-1" >TransactionId</div>
-                                <div class="col-6  py-1 " style="padding-right:24px;">${TransactionsObjects[0][j][0]._id}</div>
+                                <div class="col-6  py-1 " style="padding-right:24px;">${TransactionsObjects[0][j]._id}</div>
                             </div>
                             <div class="row " style="background-color: rgba(158, 227, 158, 0.272);">
                                 <div class="col-6  px-2 py-1">amount</div>
-                                <div class="col-6  px-2 py-1">${TransactionsObjects[0][j][0].amount}</div>
+                                <div class="col-6  px-2 py-1">${TransactionsObjects[0][j].amount}</div>
                             </div>
                             <div class="row" style="background-color:rgba(223, 186, 186, 0.194)">
                                 <div class="col-6  px-2 py-1">mode</div>
-                                <div class="col-6 px-2 py-1">${TransactionsObjects[0][j][0].mode}</div>
+                                <div class="col-6 px-2 py-1">${TransactionsObjects[0][j].mode}</div>
                             </div>
         
                         </div>
@@ -121,7 +124,7 @@
             }
        
             tag = tag + ` <hr>   <div class="container mt-6" >
-        <div class="bold" style="width:fit-content">id : ${bookingId}</div>
+        <div class="bold" style="width:fit-content;" id="bookings${i}">${bookingId}</div>
         <div class="addViewTrans">
 
             <div class="row" >
@@ -167,16 +170,18 @@
         </div> 
         </div>` + "<hr>"
            }
-    
+          console.log(tag)
           ele.innerHTML = tag      
 
         }) 
-        function addNewTransaction(e)
+       async function addNewTransaction(e)
         {
-              
+              let Axios=  axios.create()
             const defaultText  =    "default"   
             const text = "Enter The Amount " 
             var amount =  window.prompt(text,defaultText)
+            bookingId = document.getElementById(`bookings${e}`).innerText
+           await  Axios.post('/payments/add',{amount : amount,bookingId : bookingId})
             var Transactions = document.getElementById(`Transactions${e}`)
             Transactions.innerHTML = Transactions.innerHTML +  `            <div class="d-flex col-sm-6 col-xl-3 text-center justify-content-center py-2"  >
                 <div class="cont">

@@ -14,4 +14,5 @@ async function getAndUpdateNumberofBookings()
     return numberOfBookings;
 }
 
+
 module.exports =  getAndUpdateNumberofBookings

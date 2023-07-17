@@ -1,19 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="login">
-        <form action="/admin/checkAdmin" method="post">
-            <label for="userName">username</label>
-            <input type="text" id="userName" name="userName">
-            <label for="password" >password</label>
-             <input type="password" id="password" name="password">
-             <button>submit</button>
-        </form>
-    </div>
-</body>
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../public/assets/styles/main.css">
+    </head>
+    <body>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="booking-form">
+
+      <form action="/admin/checkAdmin" enctype="application/json" method="post">
+        <h1> Login </h1>
+        
+        <fieldset>
+          
+
+        
+          <label for="username">username:</label>
+          <input type="text" id="username" name="username" required>
+           <label for="password">password</label>
+           <input type="password" name="password" id="password">       
+        </fieldset>
+        <button type="submit">Login</button>
+        
+       </form>
+      </div>
+        </div>
+      </div>
+      
+    </body>
 </html>
+
