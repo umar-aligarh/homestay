@@ -160,4 +160,4 @@ function displayAllTransactions(e)
         ele.innerHTML = tag         
          
      })
-}
+}                                               
