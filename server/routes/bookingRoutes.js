@@ -10,12 +10,13 @@ const metaModel = require('../models/metaModel');
 
 
 router.route('/newBooking').get((req,res)=>{
-    if(!req.session.user)
-    res.redirect('/users/login') 
-    else {
-    const phone =req.session.user.phone
-    res.render('newBooking',{phone})
-    }
+    // if(!req.session.user)
+    // res.redirect('/users/login') 
+    // else {
+    // const phone =req.session.user.phone
+    // res.render('newBooking',{phone})
+    // }
+    res.render('newBooking')
 })
 
 router.route('/get').get(async (req,res)=>{
