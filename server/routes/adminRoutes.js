@@ -16,7 +16,7 @@ else
     res.render('admin')
 })
 router.route('/checkAdmin').post(async (req,res)=>{
-const userName = (req.body.userName)
+const userName = (req.body.username)
     const password = (req.body.password)
     const Admin         = await admin.findOne({userName:userName})   
      if(!Admin)

@@ -16,6 +16,11 @@ const bookingSchema = new mongoose.Schema({
     checkIn: Date,
     checkOut: Date,
     isBookingCompelete: Boolean
+    ,
+    transactions: 
+    {
+         type : [String]
+    }
 })
 mongoose.pluralize(null)
 module.exports = mongoose.model("booking",bookingSchema);
