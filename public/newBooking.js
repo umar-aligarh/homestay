@@ -139,21 +139,31 @@ function postBooking()
   
 }
 
-function preImage(object)
+function changeImage(object,action)
 {
-  console.log(object)
-}
-function nextImage(object)
-{
+
   console.log(object);
-  const images = document.getElementById('images');
   const roomCategory = document.getElementsByClassName('room-category')[0];
-  const imgdiv = roomCategory.getElementsByClassName('imgdiv');
   const img = roomCategory.getElementsByTagName('img')['0'];
   const outerHtml = img.outerHTML;
   let index = outerHtml.search(/room[0-9]{1}/);
   index+=4;
-  outerHtml[index] = (parseInt(outerHtml[index])+1).toString;
-  img.outerHTML = outerHtml;
-  console.log(typeof outerHtml)
+  let imgNo = parseInt(outerHtml[index]);
+  let imgTotal = parseInt(outerHtml[index+2]);
+  if(action=='next')
+  {
+    imgNo++;
+    if(imgNo==imgTotal+1)imgNo=1;
+
+
+  }
+  else 
+  {
+    imgNo--;
+    if(imgNo==0)imgNo=imgTotal;
+  }
+  let x = imgNo.toString();
+  let newHTML = outerHtml.substring(0, index) + x + outerHtml.substring(index + 1);
+  img.outerHTML = newHTML;
+  console.log(y);
 }

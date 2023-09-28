@@ -108,18 +108,20 @@
         <label for="checkOut">CheckOut</label>
         <input type="date" id="checkOut" name="checkOut" onchange="checkBookingClash(this)"> -->
                <br>
-               <div id="images"><img src="../public/assets/img/rooms/room1.jpeg" alt>
-                  <img src="../public/assets/img/rooms/room2.jpeg" alt></div>
+               <div id="images"><img src="../public/assets/img/rooms/room1_4.jpeg" alt>
+                  <img src="../public/assets/img/rooms/room2_4.jpeg" alt>
+                  <img src="../public/assets/img/rooms/room3_4.jpeg" alt>
+                  <img src="../public/assets/img/rooms/room4_4.jpeg" alt></div>
                <div class="room-category">
                   <div class="imgdiv"><img
-                        src="../public/assets/img/rooms/room1.jpeg" alt>
+                        src="../public/assets/img/rooms/room1_4.jpeg" alt>
 
                      <div class="pre">
                         <div class="btn-group" role="group"
                            aria-label="Basic example">
                            <button type="button"
                               class="btn btn-primary btn-pre-next"
-                              onclick="preImage(this)"><</button>
+                              onclick="changeImage(this,'pre',3)"><</button>
                         </div>
                      </div>
 
@@ -128,7 +130,7 @@
                            aria-label="Basic example">
                            <button type="button"
                               class="btn btn-primary btn-pre-next"
-                              onclick="nextImage(this)">></button>
+                              onclick="changeImage(this,'next',3)">></button>
                         </div>
                      </div>
 
@@ -189,7 +191,7 @@
                <div class="room-category">
 
                   <div class="imgdiv"><img
-                        src="../public/assets/img/rooms/room3.jpeg"
+                        src="../public/assets/img/rooms/room1_4.jpeg"
                         alt></div>
                   <div class="txtdiv">
                      <h2>Deluxe-Ground Floor</h2>
